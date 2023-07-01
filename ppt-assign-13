@@ -1,0 +1,178 @@
+Q1. Write a program to show Interface Example 
+// Define an interface
+interface Shape {
+    void draw(); // Abstract method
+}
+
+// Implement the interface
+class Circle implements Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+
+class Rectangle implements Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a rectangle");
+    }
+}
+
+class Triangle implements Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a triangle");
+    }
+}
+
+// Main class
+public class InterfaceExample {
+    public static void main(String[] args) {
+        // Create objects of different shapes
+        Circle circle = new Circle();
+        Rectangle rectangle = new Rectangle();
+        Triangle triangle = new Triangle();
+
+        // Call the draw() method on each object
+        circle.draw();
+        rectangle.draw();
+        triangle.draw();
+    }
+}
+
+####################################################################################################
+Q2.Write a program a Program with 2 concrete method and 2 abstract method in java ?
+// Abstract class
+abstract class Shape {
+    // Concrete method
+    public void display() {
+        System.out.println("Displaying shape...");
+    }
+
+    // Abstract methods
+    public abstract void draw();
+    public abstract double calculateArea();
+}
+
+// Concrete subclass
+class Circle extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a circle");
+    }
+
+    @Override
+    public double calculateArea() {
+        // Calculate area logic for circle
+        double radius = 5.0;
+        return Math.PI * radius * radius;
+    }
+}
+
+// Concrete subclass
+class Rectangle extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a rectangle");
+    }
+
+    @Override
+    public double calculateArea() {
+        // Calculate area logic for rectangle
+        double length = 5.0;
+        double width = 3.0;
+        return length * width;
+    }
+}
+
+// Main class
+public class AbstractExample {
+    public static void main(String[] args) {
+        // Create objects of different shapes
+        Circle circle = new Circle();
+        Rectangle rectangle = new Rectangle();
+
+        // Call the concrete methods
+        circle.display();
+        rectangle.display();
+
+        // Call the abstract methods
+        circle.draw();
+        rectangle.draw();
+
+        // Call the overridden abstract methods
+        double circleArea = circle.calculateArea();
+        double rectangleArea = rectangle.calculateArea();
+
+        System.out.println("Circle area: " + circleArea);
+        System.out.println("Rectangle area: " + rectangleArea);
+    }
+}
+
+####################################################################################################
+Q3.Write a program  to show the use of functional interface in java
+// Functional interface with a single abstract method
+@FunctionalInterface
+interface Calculator {
+    int calculate(int a, int b);
+}
+
+public class FunctionalInterfaceExample {
+    public static void main(String[] args) {
+        // Using lambda expression to create an instance of the functional interface
+        Calculator addition = (a, b) -> a + b;
+        Calculator subtraction = (a, b) -> a - b;
+
+        // Calling the calculate method of the functional interface
+        int result1 = addition.calculate(5, 3);
+        int result2 = subtraction.calculate(8, 4);
+
+        System.out.println("Result of addition: " + result1);
+        System.out.println("Result of subtraction: " + result2);
+    }
+}
+
+####################################################################################################
+Q4.What is an interface in Java?
+In Java, an interface is a reference type that defines a contract or a set of rules for classes to follow.
+It specifies a collection of abstract methods (methods without a body) that a class implementing the interface must provide.
+Additionally, an interface can also include constant variables and default methods.
+####################################################################################################
+Q5.What is the use of interface in Java?
+In Java, interfaces serve several purposes and provide a range of benefits. Here are some key uses of interfaces in Java:
+
+1. **Contractual Agreement**: Interfaces define a contract or a set of rules that classes must adhere to. By implementing an interface, a class agrees to fulfill the contract and provide the required behavior specified by the interface. This enables consistent and predictable interactions between objects.
+
+2. **Abstraction**: Interfaces allow you to define abstract methods, which are methods without an implementation. This promotes abstraction by separating the definition of a method from its implementation details. Concrete classes implementing the interface provide the actual implementation for these methods.
+
+3. **Multiple Inheritance of Type**: Java supports single inheritance for classes, but a class can implement multiple interfaces. This allows a class to inherit the type of multiple interfaces, enabling it to exhibit multiple behaviors and be used in various contexts.
+
+4. **Polymorphism**: Interfaces enable polymorphism in Java. You can create variables of an interface type and assign objects of different classes that implement the interface to those variables. This allows you to treat different objects interchangeably based on their shared interface, providing flexibility and extensibility in your code.
+
+5. **API Design and Specification**: Interfaces are commonly used to define APIs (Application Programming Interfaces) in Java. By specifying interfaces, you can define a clear and well
+####################################################################################################
+Q6.What is the lambda expression of Java 8
+(parameters) -> { body }
+Calculator add = (a, b) -> a + b;
+int result = add.calculate(5, 3); // result = 8
+
+####################################################################################################
+Q7.Can you pass lambda expressions to a method? When?
+Yes, you can pass lambda expressions as arguments to methods in Java.
+This is particularly useful when working with functional interfaces, which are interfaces that have a single abstract method.
+####################################################################################################
+Q8.What is the functional interface in Java 8?
+In Java 8, a functional interface is an interface that contains exactly one abstract method. Functional interfaces are used to define the types for lambda expressions and method references. They provide a way to implement functional programming concepts in Java.
+####################################################################################################
+Q9.What is the benefit of lambda expressions in Java 8?
+The benefit of lambda expressions in Java 8 is that they allow you to write more concise and expressive code by providing a way to represent behavior as data. With lambda expressions, you can treat functionality as a method argument or a return value, enabling you to write more flexible and reusable code.
+####################################################################################################
+Q10.Is it mandatory for a lambda expression to have parameters?
+No, it is not mandatory for a lambda expression to have parameters. Lambdas without parameters are called "zero-parameter lambdas" or "parameterless lambdas". They can be used when you want to represent an action or behavior that does not require any input.
+####################################################################################################
+####################################################################################################
+####################################################################################################
+####################################################################################################
+####################################################################################################
+####################################################################################################
